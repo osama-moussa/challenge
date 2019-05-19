@@ -8,7 +8,9 @@ import ControlledCarousel from '../components/ControlledCarousel';
 class HomePage extends Component {
     state = {
         show: false,
-        images: []
+        images: [],
+        title:"",
+        
     };
 
     handleClose = () =>  this.setState({ show: false });
@@ -16,9 +18,6 @@ class HomePage extends Component {
     handleShow = () => this.setState({ show: true });
 
     handleUploadClick = () => {
-        console.log('uploading');
-        // logic for the upload click;
-        localStorage.setItem('name', "ahmed menaem");
         this.setState({ show: false });
     };
 
@@ -29,6 +28,10 @@ class HomePage extends Component {
           });
         }
        }
+       handleTitle = event => {
+        this.setState({title: event.target.value})
+      }
+     
 
     render() { 
         return ( 
@@ -37,15 +40,15 @@ class HomePage extends Component {
                 <hr />
                 <ControlledCarousel 
                     images={this.state.images}
+                    title={this.state.title}
                 />
                 <AddButton handleClick={this.handleShow} />
-                {/* <input type="color" />
-                <input type="file" /> */}
                 <UploadModal
                     onImageChange={this.onImageChange}
                     show={this.state.show} 
                     handleClose={this.handleClose} 
                     handleUploadClick={this.handleUploadClick}
+                    handleTitle={this.handleTitle}
                 />
             </Container>
          );

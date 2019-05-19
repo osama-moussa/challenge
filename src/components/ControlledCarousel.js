@@ -39,8 +39,8 @@ class ControlledCarousel extends React.Component {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    
+                    <p name="title">{this.props.title}</p>
                 </Carousel.Caption>
              </Carousel.Item>)
            }
@@ -48,4 +48,4 @@ class ControlledCarousel extends React.Component {
       );
     }
   }
-export default ControlledCarousel;  
+export default ControlledCarousel;

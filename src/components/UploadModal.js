@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import { Modal, Button, Form  } from 'react-bootstrap';
 class UploadModal extends Component {
+  
+  constructor(props){
+    super(props)
+    
+  }
     render() { 
         return ( 
             <Modal show={this.props.show}>
@@ -15,7 +20,7 @@ class UploadModal extends Component {
               </select>
             <Form.Control type="number" placeholder="width" />
             <hr />
-            <Form.Control type="text" placeholder="title" />
+            <Form.Control type="text" placeholder="title" onChange={this.props.handleTitle} />
             <Form.Control type="color" />
             <Form.Control type="color" />
           </Modal.Body>

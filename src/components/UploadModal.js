@@ -15,14 +15,16 @@ class UploadModal extends Component {
           <Modal.Body>
               <Form.Control type="file" onChange={this.props.onImageChange}/> <br />
               <select>
-                  <option value="square">Square</option>
-                  <option value="rounded">Rounded</option>
+                  <option name ="square" value="square" >Square</option>
+                  <option name="rounded" value="rounded">Rounded</option>
               </select>
-            <Form.Control type="number" placeholder="width" />
             <hr />
+            <p>add title to the image</p>
             <Form.Control type="text" placeholder="title" onChange={this.props.handleTitle} />
-            <Form.Control type="color" />
-            <Form.Control type="color" />
+            <p>change text colour </p>
+            <Form.Control type="color" name="TextColor" onChange={this.props.handleTextColor}/>
+            <p>change background colour </p>
+            <Form.Control type="color" name="Bgcolor"  onChange={this.props.handleBgColor}/>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.props.handleClose}>

@@ -10,7 +10,8 @@ class HomePage extends Component {
         show: false,
         images: [],
         title:"",
-        
+        Bgcolor:"",
+        TextColor:"",
     };
 
     handleClose = () =>  this.setState({ show: false });
@@ -31,7 +32,16 @@ class HomePage extends Component {
        handleTitle = event => {
         this.setState({title: event.target.value})
       }
-     
+      handleBgColor = event =>{
+          this.setState({Bgcolor:event.target.value})
+      }
+     handleTextColor = event =>{
+         this.setState({TextColor:event.target.value})
+         
+     }
+    
+  
+    
 
     render() { 
         return ( 
@@ -41,6 +51,9 @@ class HomePage extends Component {
                 <ControlledCarousel 
                     images={this.state.images}
                     title={this.state.title}
+                    TextColor={this.state.TextColor}
+                    Bgcolor={this.state.Bgcolor}
+                
                 />
                 <AddButton handleClick={this.handleShow} />
                 <UploadModal
@@ -49,6 +62,10 @@ class HomePage extends Component {
                     handleClose={this.handleClose} 
                     handleUploadClick={this.handleUploadClick}
                     handleTitle={this.handleTitle}
+                    handleColor={this.handleBgColor}
+                    handleTextColor={this.handleTextColor}
+                    handleBgColor={this.handleBgColor}
+                   
                 />
             </Container>
          );
